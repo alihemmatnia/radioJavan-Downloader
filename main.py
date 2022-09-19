@@ -19,6 +19,11 @@ def download_file(url, filename):
 
 url = input("Enter Url : ")
 
-url = url.split("/")[5].split("?")[0]
-download_file(
+try:
+    url = url.split("/")[5].split("?")[0]
+    download_file(
     f"https://host2.rj-mw1.com/media/mp3/mp3-128/{url}.mp3", f"{url}-{randint(0,10)}.mp3")
+
+except:
+    print("Link Invalid!")
+
